@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Payment Form</title>
+    <link rel="stylesheet" href="../css/capstone3.css">
+</head>
+<header>
+    <div id="logo">E-Commerce Payment Form</div>
+    <img src="../images/Manhattanlogo.avif"
+    <nav>
+        <ul>
+            <li><a href="https://www.manh.com/">Home</a></li>
+            <li><a href="https://www.manh.com/about-us">About</a></li>
+            <li><a href="https://www.manh.com/contact-us">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <div class="container">
+        <h1>Checkout</h1>
+        <form id="payment-form">
+            <!-- Order Details Section -->
+            <div class="form-group">
+                <label for="order-id">Order ID</label>
+                <input type="text" id="order-id" name="order-id" readonly value="ORD12345">
+            </div>
+            <div class="form-group">
+                <label for="customer-name">Full Name</label>
+                <input type="text" id="customer-name" name="customer-name" placeholder="First and Last Name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Shipping Address</label>
+                <input type="text" id="address" name="address" placeholder="Address" required>
+            </div>
+
+            <!-- Credit Card Details Section -->
+            <div class="form-group">
+                <label for="cardNumber">Card Number</label>
+<input type="tel" id="cardNumber" name="cardNumber" placeholder="Card Number" required>
+            </div>
+            <div class="form-group">
+                <label for="expiration">Expiration Date</label>
+                <input type="month" id="expiryDate" name="expiryDate" required>
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" required>
+            </div>
+            <div class="form-group">
+                <label for="zip">Zip Code</label>
+                <input type="text" id="zip" name="zip" placeholder="Zip Code" required>
+            </div>
+			<!-- Transaction Type Dropdown -->
+			<div class="form-group">
+			    <label for="transaction-type">Select Transaction Type:</label>
+			    <select id="transaction-type" name="transaction-type" required>
+			        <option value="1">1</option>
+			        <option value="2">2</option>
+			        <option value="3">3</option>
+			    </select>
+			</div>
+		
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Payment</button>
+        </form>
+
+        <!-- Display Result -->
+        <div id="message"></div>
+
+        <!-- Transaction Table -->
+        <table id="transaction-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Authorization Token</th>
+                    <th>Authorized Amount</th>
+                    <th>Expiration Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Transaction details will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBsiFUXtVgMqdPfFZCoPypi6x-EhNIEHIg",
+    authDomain: "capstone-effa4.firebaseapp.com",
+    projectId: "capstone-effa4",
+    storageBucket: "capstone-effa4.firebasestorage.app",
+    messagingSenderId: "738681930382",
+    appId: "1:738681930382:web:0366f98e01460526af7fdf",
+    measurementId: "G-VW4Y7RW9ZW"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
